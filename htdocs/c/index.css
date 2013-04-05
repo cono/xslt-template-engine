@@ -1,0 +1,34 @@
+.treeroot ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 10px;
+}
+
+.treeroot li {
+    padding-left: 14px;
+}
+
+.treeroot > ul > li {
+    padding-left: 0;
+}
+
+.treeroot li > label {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 2px 2px;
+    background-image: url(/i/node-open.png);
+}
+
+.treeroot li > label {
+    min-width: 42ch;
+    min-height: 12px;
+    padding-left: 16px;
+}
+
+.treeroot li.closed > ul {
+    display: none;
+}
+
+.treeroot li.closed > label {
+    background-image: url(/i/node-closed.png);
+}
