@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <!-- root element -->
+    <xsd:element name="root" type="root-type" />
+
+    <!-- root element type -->
+    <xsd:complexType name="root-type">
+	<xsd:sequence>
+	    <xsd:element name="example" type="example-type" minOccurs="0" maxOccurs="unbounded" />
+	</xsd:sequence>
+    </xsd:complexType>
+
+    <!-- example element type -->
+    <xsd:complexType name="example-type">
+	<xsd:attribute name="parent" type="xsd:unsignedInt" use="required" />
+	<xsd:attribute name="name"   type="xsd:string"      use="required" />
+	<xsd:attribute name="id"     type="xsd:unsignedInt" use="required" />
+    </xsd:complexType>
+</xsd:schema>

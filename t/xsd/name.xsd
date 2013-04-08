@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <!-- root element -->
+    <xsd:element name="root" type="root-type" />
+
+    <!-- root element type -->
+    <xsd:complexType name="root-type">
+	<xsd:attribute name="nick" type="xsd:string" use="required" />
+    </xsd:complexType>
+</xsd:schema>
