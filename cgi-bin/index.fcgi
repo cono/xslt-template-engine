@@ -5,9 +5,9 @@ use warnings;
 
 use CGI::Fast;
 use XML::Hash::XS;
-#use File::Spec;
-#use FindBin qw($Bin);
-#
+use File::Spec;
+use FindBin qw($Bin);
+
 #use lib File::Spec->catdir($Bin, qw(.. lib));
 
 my $_stop = 0;
@@ -34,6 +34,8 @@ my $conv = XML::Hash::XS->new(
 	xml_decl => 1
 );
 
+my $tmpl_path = File::Spec->catdir($Bin, qw|.. tmpl|);
+
 
 my $data = {
 	name => {
@@ -47,6 +49,12 @@ my $data = {
 			{ name => 'Art',           parent => 3, id => 4 },
 			{ name => 'Craft',         parent => 3, id => 5 }
 		],
+	},
+	third_party => {
+		results => [
+			{ artist_name => 'Madonna', venue => 'Kitchen',      event => 'cooking',      date => '2013-04-21' },
+			{ artist_name => 'cono',    venue => 'Provectus-IT', event => 'presentation', date => '2013-04-20' },
+		]
 	}
 };
 
@@ -67,7 +75,10 @@ while (1) {
 
 		die "Bad request" unless $output;
 
-		print "X-Xslt-Stylesheet: /$tmpl.xslt\r\n";
+		if (-e File::Spec->catfile($tmpl_path, "$tmpl.xslt")) {
+			print "X-Xslt-Stylesheet: /$tmpl.xslt\r\n";
+		}
+
 		print qq(Content-type:application/xml;charset=utf-8\r\n\r\n);
 		$conv->hash2xml($output);
 
