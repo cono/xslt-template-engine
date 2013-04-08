@@ -102,7 +102,7 @@
 			<xsl:attribute name="title">
 				<xsl:call-template name="node-path" />
 			</xsl:attribute>
-			&lt;<b><xsl:value-of select="name()" /></b>&gt;<xsl:apply-templates mode="attr" select="@*" /></label>
+			&lt;<b><xsl:value-of select="name()" /></b><xsl:apply-templates mode="attr" select="@*" />&gt;</label>
 		<ul><xsl:apply-templates mode="xml" /></ul>
 		<label>&lt;/<b><xsl:value-of select="name()" /></b>&gt;</label>
 	</li>
@@ -114,7 +114,7 @@
 			<xsl:attribute name="title">
 				<xsl:call-template name="node-path" />
 			</xsl:attribute>
-			&lt;<b><xsl:value-of select="name()" /></b>&gt;<xsl:apply-templates mode="attr" select="@*" /></label>
+			&lt;<b><xsl:value-of select="name()" /></b><xsl:apply-templates mode="attr" select="@*" />&gt;</label>
 		<xsl:value-of select="." />
 		<label>&lt;/<b><xsl:value-of select="name()" /></b>&gt;</label>
 	</li>
