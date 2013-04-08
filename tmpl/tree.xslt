@@ -14,7 +14,7 @@
 <xsl:template match="/root">
 <html>
     <head>
-	<title>Name</title>
+	<title>Tree</title>
 	<link rel="stylesheet" type="text/css" href="/c/index.css" />
 	<script type="text/javascript" src="/j/index.js" />
     </head>
